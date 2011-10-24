@@ -19,6 +19,7 @@ public class InternalStorageActivity extends Activity {
         FileOutputStream fos;
         FileInputStream fis;
 		try {
+			
 			//Escritura
 			fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
 			fos.write(string.getBytes());
@@ -26,7 +27,7 @@ public class InternalStorageActivity extends Activity {
 		    
 		    //Lectura
 		    fis = openFileInput(FILENAME);
-		    byte[] buffer = new byte[12];//Un caracter son 8 bits = 1 byte.
+		    byte[] buffer = new byte[12];//Un caracter son 8 bits = 1 byte. La frase "Hello world!" consta de 12 bytes
 			fis.read(buffer);
 			String fileContent = new String(buffer);
 			System.out.println("------>"+fileContent);
